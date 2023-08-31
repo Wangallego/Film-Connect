@@ -22,10 +22,6 @@ En el código actual de Film Connect, hemos implementado la funcionalidad de mos
 
 - Los usuarios pueden votar por las películas utilizando los botones "Me gusta" y "Descartar" en cada tarjeta. Los votos se almacenan y se utiliza lógica adicional para determinar cuándo se ha alcanzado un consenso en una película.
 
-## Capturas de Pantalla
-
-_(Agrega capturas de pantalla de tu aplicación aquí si lo deseas)_
-
 ## Cómo Iniciar
 
 Para iniciar la aplicación en tu entorno local, sigue estos pasos:
