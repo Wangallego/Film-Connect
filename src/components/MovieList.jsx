@@ -30,6 +30,7 @@ function MovieList() {
       fetchMovies();
     }
   }, [movies]);
+  
 
   // Estado para controlar la expansión de cada tarjeta de película
   const [expandedMovies, setExpandedMovies] = useState({});
@@ -43,26 +44,26 @@ function MovieList() {
   };
 
   return (
-    <div className="w-full h-full flex justify-center items-center mt-12">
+    <div className="w-full h-full flex justify-center items-center ">
       {isLoading ? (
         <p>Cargando...</p>
       ) : (
-        <div className="w-full grid grid-cols-4 gap-4 h-[2rem]" id="movies-container">
+        <div className="w-full grid grid-cols-4 gap-4 h-[2rem] " id="movies-container">
           {movies.map((movie) => (
             <div
               key={movie.id}
-              className={`bg-gray-300 flex flex-col justify-center items-center border rounded-md p-6 w-[18rem] h-[24rem] ${
+              className={`bg-gray-300 flex flex-col justify-center items-center border rounded-md p-6 w-[18rem] h-[24rem] overflow-scroll${
                 expandedMovies[movie.id] ? 'expanded' : 'collapsed'
-              }`}
+              }object-cover`}
             >
-              <div>
+              <div className='flex flex-col justify-center items-center overflow-hidden'>
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                   alt={movie.title}
-                  className="w-full h-[16rem] object-cover"
+                  className="max-w-full max-h-[16rem] object-cover rounded-xl"
                 />
-                <h2 className="mt-2 text-center">{movie.title}</h2>
-              </div>
+                
+              </div><h2 className="mt-2 text-center">{movie.title}</h2>
               <div className="mt-2">
                 {/* Mostrar el rating de la película */}
                 <p className="text-center">Rating: {movie.vote_average}</p>
@@ -92,5 +93,4 @@ function MovieList() {
     </div>
   );
 }
-
 export default MovieList;
