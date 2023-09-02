@@ -11,7 +11,7 @@ function MovieList() {
       const fetchMovies = async () => {
         try {
           const response = await fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=es&page=1&sort_by=popularity.desc`
+            `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=es&page=2&sort_by=popularity.desc`
           );
 
           if (!response.ok) {
@@ -43,10 +43,12 @@ function MovieList() {
     }));
   };
 
+ 
+
   return (
     <div className="w-full h-full flex justify-center items-center ">
       {isLoading ? (
-        <p>Cargando...</p>
+         <div className="loader"></div>
       ) : (
         <div className="w-full grid grid-cols-4 gap-4 h-[2rem] " id="movies-container">
           {movies.map((movie) => (
