@@ -7,7 +7,7 @@ export default function Btn() {
     };
 
     return (
-        <div className="flex justify-center items-center gap-3 border border-slate-400 w-[205px] rounded-full">
+        <div className="flex justify-center items-center gap-6 border border-slate-400 w-[230px] rounded-full">
             <div className={`btn ${selectedButton === 'hoy' ? 'bg-blue-500' : ''} px-4 rounded-xl`} onClick={handleClick}>
             <a href="#" className="text-black hover:text-black">Hoy</a>
             </div>
